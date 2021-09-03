@@ -1,0 +1,61 @@
+@import './variables';
+@import './components/form';
+@import './components/listBooks';
+@import './components/myInput';
+@import './components/ui';
+@import './components/listBookItem';
+
+* {
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+.myLayout {
+    width: 100%;
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0px 16px;
+}
+
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 32px;
+
+    @media (max-width: 990px) {
+        flex-direction: column;
+    };
+
+
+    &-leftColumn {
+        width: 320px;
+        margin-right: 32px;
+        @media (max-width: 990px) {
+            width: 100%;
+            margin-right: 0;
+        }
+    }
+
+    &-rightColumn {
+        width: calc(100% - 352px);
+        @media (max-width: 990px) {
+            width: 100%;
+            margin-top: 32px;
+        }
+    }
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+.heading {
+    color: $violet;
+    font-size: 36px;
+    text-align: center;
+    margin: 32px 0;
+}

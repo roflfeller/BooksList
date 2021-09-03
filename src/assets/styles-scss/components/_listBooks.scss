@@ -1,0 +1,21 @@
+.ListBooks {
+    ul {
+        padding-left:0;
+        .BookItem {
+            position: relative;
+            &-delete {
+                position: absolute;
+                right:16px;
+                top: 16px;
+                cursor:pointer;
+                transition: .3s;
+                &:hover {
+                    transform:rotate(180deg);
+                }
+            }
+        }
+    }
+    .emptyList {
+        font-weight: 600;
+    }
+}

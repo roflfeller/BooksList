@@ -1,0 +1,49 @@
+.defaultButton {
+    font-weight: 700;
+    font-size: 16px;
+    color: #fff;
+    padding: 8px 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #5474b1;
+    border-radius: 100px;
+    text-decoration: none;
+    position: relative;
+    z-index: 55;
+    transition: all .3s;
+    cursor: pointer;
+    border: none;
+    width: 160px;
+    height: 36px;
+    &:hover {
+        opacity: 0.9;
+    }
+
+    &.disabled {
+        opacity: 0.4;
+        cursor:default;
+    }
+
+    &.secondaryButton {
+        background: $red;
+        padding: 8px 16px;
+    }
+
+    &.greenButton {
+        background: $green;
+        color: #fff;
+    }
+
+    &.pinkButton {
+        background: $lightBlue;
+        color: $darkViolet;
+    }
+
+    @media (max-width: 990px) {
+        width: 144px;
+        height: 28px;
+        font-size: 14px;
+        flex-shrink: 0;
+    }
+}
