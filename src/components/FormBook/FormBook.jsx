@@ -1,6 +1,6 @@
 import React from 'react';
-import CustomButton from '../ui/Button';
-import MyInput from '../ui/MyInput';
+import CustomButton from '../UI/Button';
+import MyInput from '../UI/MyInput';
 import { useLogicForm } from './useLogicForm';
 
 

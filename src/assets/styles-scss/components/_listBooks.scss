@@ -1,6 +1,9 @@
 .ListBooks {
     ul {
         padding-left:0;
+        li {
+            position: relative;
+        }
         .BookItem {
             position: relative;
             &-delete {

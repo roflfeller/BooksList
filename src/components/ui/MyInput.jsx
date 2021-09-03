@@ -1,7 +1,4 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
-
-
+import React,{useMemo} from 'react';
 
 const MyInput = (props) => {
 
@@ -15,8 +12,9 @@ const MyInput = (props) => {
         required,
     } = props;
 
+    
     const hasError = Boolean(formik.touched[name] && formik.errors[name]);
-
+        
     return (
         <div className={`MyInput`}>
             <label htmlFor={name} className={'MyInput-label'}>{label || ''} {required && <span className={'MyInput-label__circle'}></span>}</label>

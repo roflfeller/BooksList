@@ -54,12 +54,14 @@ export const useLogicForm = () => {
         validationSchema: yup.object({
             author: yup
                 .string()
+                .trim()
                 .required('Введите автора'),
             yearPub: yup
                 .number()
                 .required('Введите год издания'),
             nameBook: yup
                 .string()
+                .trim()
                 .required('Введите имя книги'),
             counterPages: yup
                 .number()
@@ -78,30 +80,15 @@ export const useLogicForm = () => {
     });
 
     const checkNotEmptyField = () => {
-        let has = false;
-
-        Object.values(formik.values).forEach((e) => {
-            if(e !== '') {
-                has = true;
-            }
-        });
-
-        return has;
+        return Object.values(formik.values).every(item => !item); 
     }
 
     const disabled = JSON.stringify(initValues) === JSON.stringify(formik.values);
-    const disabledForClear = !checkNotEmptyField();
-
-
+    const disabledForClear = checkNotEmptyField();
      //просто пример для использования useMemo
     const renderLabel = useMemo(() => {
         return bookForEdit.id ? 'Редактировать' : 'Добавить'
     },[bookForEdit.id]);
-
-
-
-
-
 
     return {
         formik,
